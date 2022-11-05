@@ -1,0 +1,753 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+:root {
+    --primary-color: rgba(68,108,172, 1); /*#446cac*/
+    --primary-color: #0476af;
+    
+    --highlight-color: rgba(121, 157, 191, 0.8);
+    --text-color: rgb(99, 99, 99);
+
+    --primary-button-color: rgba(253,184,19,255);
+
+    --main-font: 'Nunito';
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 10px;
+}
+
+body, html {
+    height: 100%;
+    font-family: var(--main-font);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 2.4rem;
+}
+
+h1, h2, h3 {
+    font-family: 'Open Sans';
+}
+
+p {
+    font-size: 1.8rem;
+    line-height: 25px;
+    color: var(--text-color);
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 36px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .banner-info {
+        width: 100%;
+        max-width: 1366px;
+        display: flex;
+        justify-content: flex-end;
+        padding: 8px 16px;
+    }
+
+    .banner-info i {
+        padding: 0 8px;
+        font-size: 2rem;
+    }
+
+    .phone-number {
+        color: white;
+        font-size: 2rem;
+    }
+
+/* Header */
+.main-header {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+    .header-container {
+        display: flex;
+        width: 100%;
+        max-width: 1366px;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 16px;
+        /* border: 1px solid red; */
+    }
+
+    .main-header a {
+        color: var(--primary-color);
+        font-weight: bold;
+    }
+
+    .header-container img {
+        height: auto;
+        width: 150px;
+        object-fit: fill;
+    }
+
+    nav {
+        display: flex;
+    }
+
+        nav a {
+            padding: 16px;
+            font-size: 1.5rem;
+            transition: 0.5s;
+        }
+
+        nav a:hover {
+            color: var(--highlight-color);
+        }
+
+
+/* Hero */
+.hero-section {
+    width: 100%;
+    height: 45vh;
+    display: flex;
+    justify-content: center;
+}
+
+.max-container-hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to left, var(--primary-color) 100%, rgba(12,116,117,0));
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+    .hero-image {
+        width: 50%;
+        height: 100%;
+        background-image: linear-gradient(to left, var(--primary-color) 5%, rgba(12,116,117,0)), url('./images/toddler-getting-vaccination-by-pediatrician.jpg');
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
+    }
+
+    .for-mobile-only {
+        display: none;
+    }
+
+    /* Mobile Menu */
+    /* This is the actual overlay that appears when you click mobile menu */
+    .mobile-menu {
+        /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+        height: 0;
+        width: 100%;
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        background-color: rgb(0,0,0); /* Black fallback color */
+        background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+        overflow-y: hidden; /* Disable horizontal scroll */
+        transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+
+    /* Positioning the content inside the mobile menu */
+    .mobile-menu-nav {
+        position: relative;
+        top: 25%; /* 25% from the top */
+        width: 100%; /* 100% width */
+        text-align: center; /* Centered text/links */
+        margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+        overflow-y: hidden;
+    }
+
+        .mobile-menu i {
+            font-size: 3.6rem;
+            color: white;
+        }
+
+        .mobile-menu-nav a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block; /* Display block instead of inline */
+            transition: 0.3s; /* Transition effects on hover (color) */
+        }
+
+        .mobile-menu-nav a:hover {
+            color: white;
+        }
+
+        .close-mobile-menu {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+
+    .hero-text {
+        width: 50%;
+        padding: 64px;
+    }
+
+    .hero-text :is(h1, p){
+        color: white;
+        text-align: left;
+    }
+
+    .hero-slogan {
+        line-height: 48px;
+    }
+
+    .hero-desc {
+        padding-top: 8px;
+    }
+
+    .hero-cta {
+        display: flex;
+        padding-top: 16px;
+        gap: 8px;
+    }
+
+    .hero-cta a {
+        padding: 12px;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+        .make-appt-cta {
+            color: black;
+            background-color: var(--primary-button-color);
+        }
+
+        .find-dr-cta {
+            color: var(--primary-color);
+            background-color: white;
+        }
+
+/* Welcome */
+.welcome {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 128px;
+    background-color: rgba(68,108,172, 0.2);
+
+}
+
+    .welcome-container {
+        display: flex;
+        padding: 64px;
+        width: 1024px;
+        box-shadow: 0px 3px 15px rgba(72, 72, 72, 0.2);
+        background-color: white;
+        border-radius: 4px;
+        gap: 64px;
+    }
+
+        .welcome-text {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            width: 50%;
+            /* border: 1px red solid; */
+        }
+
+            .welcome-container p {
+                text-align: justify;
+                color: var(--text-color)
+            }
+
+            .welcome-container span {
+                font-size: 1.8rem;
+                font-weight: bold;
+                color: var(--primary-color);
+                cursor: pointer;
+            }
+
+        .welcome-image {
+            height: 100%;
+            width: 50%;
+        }
+
+        .welcome-image img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+/* Services */
+.content-section {
+    padding: 128px 0;
+}
+
+    .content-section h2 {
+        padding-bottom: 32px;
+    }
+
+.services {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0476af;
+}
+
+    .services h2 {
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+    }
+
+    .service-container {
+        display: flex;
+        gap: 64px;
+    }
+
+    .service {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 320px;
+        background-color: white;
+        box-shadow: 0px 3px 15px rgba(72, 72, 72, 0.1);
+        border-radius: 4px;
+        padding: 32px;
+    }
+
+        .service-text-container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+        }
+
+            .service img {
+                width: 200px;
+            }
+
+            .service h3 {
+                padding-top: 32px;
+            }
+
+            .service p {
+                text-align: center;
+                padding-top: 8px;
+                padding-bottom: 16px;
+            }
+
+            .learn-more {
+                text-transform: uppercase;
+                letter-spacing: 3px;
+                border: 2px solid var(--primary-color);
+                color: var(--primary-color);
+                font-weight: bold;
+                font-size: 1.5rem;
+                width: fit-content;
+                padding: 8px;
+                margin: 0 auto;
+                margin-top: 16px;
+            }
+
+.newsletter {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 128px 0;
+
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url('https://img.freepik.com/free-photo/blur-hospital_1203-7972.jpg?w=1380&t=st=1667346809~exp=1667347409~hmac=1d6228b8d07768fecabba50caa80e55b9a40f5af699b1134b1370a78370e635d');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+    .newsletter-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 64px;
+        background-color: white;
+        padding: 32px;
+        border-radius: 4px;
+    }
+
+        .newsletter-text {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .newsletter-cta {
+            height: fit-content;
+            border: none;
+            background-color: var(--primary-button-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 16px 32px;
+            border-radius: 4px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: var(--main-font);
+        }
+
+footer {
+    background-color: var(--primary-color);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 64px;
+    padding: 64px;
+}
+
+    footer a {
+        color: white;
+        font-size: 1.5rem;
+        transition: 0.5s;
+    }
+
+        footer a:hover {
+            color: var(--primary-button-color);
+        }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-header {
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: white;
+        margin-bottom: 16px;
+    }
+
+        .footer-socials {
+            display: flex;
+            gap: 8px;
+        }
+
+            .footer-socials i {
+                font-size: 2.4rem;
+                transition: 0.5s;
+            }
+
+                .footer-socials i:hover {
+                    color: var(--primary-button-color);
+                }   
+
+        .footer-nav {
+            padding-bottom: 8px;
+        }
+
+        .footer-address {
+            margin-bottom: 8px;
+        }
+
+@media screen and (max-width: 1190px) {
+    .welcome-container {
+        flex-direction: column-reverse;
+        width: max-content;
+        gap: 32px;
+    }
+
+        .welcome-text, .welcome-image {
+            width: 100%;
+        }
+
+        .welcome-image img {
+            height: 400px;
+            width: 100%;
+            object-fit: cover;
+            object-position: 0 20%;
+        }
+}
+
+@media screen and (max-width: 950px) {
+    /* Base */
+    h1, h2 {
+        font-size: 3.5rem;
+    }
+
+    h3 {
+        font-size: 2.4rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+    }
+
+    /* Header/Navigation */
+    .header-container {
+        padding: 16px;
+    }
+    
+    .menu {
+        height: 100%;
+    }
+
+    .menu img{
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+    }
+
+    /* Hero */
+    .for-desktop-only {
+        display: none;
+    }
+
+    .for-mobile-only {
+        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .max-container-hero {
+        flex-direction: column;
+    }
+
+        .hero-image {
+            width: 100%;
+            background-image: url('./images/toddler-getting-vaccination-by-pediatrician.jpg');
+        }
+
+        .hero-text {
+            width: 100%;
+            padding: 64px;
+        }
+
+        .hero-text :is(h1, p){
+            color: var(--primary-color);
+            text-align: left;
+        }
+
+        .hero-desc {
+            color: var(--primary-color);
+        }
+
+        .hero-cta {
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            width: 50%;
+            min-width: max-content;
+        }
+
+        .find-dr-cta {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+    .welcome {
+        width: 100%;
+        height: auto;
+        padding: 0;
+    }
+
+        .welcome-container {
+            flex-direction: column-reverse;
+            width: 100%;
+            height: 100%;
+            gap: 32px;
+            border-radius: 0;
+            padding: 128px 64px;
+        }
+
+            .welcome-text, .welcome-image {
+                width: 100%;
+            }
+
+            .welcome-image {
+                height: auto;
+            }
+
+            .welcome-image img {
+                height: 400px;
+                width: 100%;
+                object-position: 0 20%;
+            }  
+
+    
+    /* Services */
+    .services {
+        height: fit-content;
+        background-image: none;
+        background-color: #0476af;
+    }
+
+    .content-section h2 {
+        padding-bottom: 32px;
+    }
+
+        .service-container {
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .service-text-container {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+            .service {
+                width: 80%;
+                flex-direction: row;
+                gap: 32px;
+            }
+
+            .service h3 {
+                padding: 0;
+            }
+
+            .service img {
+                width: 100px;
+            }
+
+            .service p {
+                text-align: left;
+            }
+            
+            .learn-more {
+                width: fit-content;
+                justify-self: flex-end;
+                margin: 0;
+            }
+
+    .newsletter {
+        width: 100%;
+        padding: 0;
+    }
+
+        .newsletter-container {
+            width: 100%;
+            border-radius: 0;
+            padding: 64px;
+        }
+}
+
+
+@media screen and (max-width: 769px) {
+    .newsletter {
+        width: 100%;
+        padding: 0;
+    }
+
+        .newsletter-container {
+            width: 100%;
+            padding: 32px;
+        }
+
+        .newsletter-text {
+            width: 50%;
+        }
+
+        .newsletter-cta {
+            font-size: 1.4rem;
+        }
+}
+
+
+/* Smalls devices */
+@media screen and (max-width: 600px){
+h1, h2 {
+    font-size: 3.6rem;
+}
+
+    /* Banner */
+    .banner-info i {
+        font-size: 1.8rem;
+    }
+
+    .phone-number {
+        font-size: 1.8rem;
+    }
+
+    /* Hero */
+    .hero-text {
+        width: 100%;
+        height: auto;
+        padding: 32px;
+    }
+
+    /* Welcome */
+    .welcome-container {
+        padding: 32px;
+    }
+
+    /* Services */
+    .services {
+        /* background-color: white; */
+    }
+
+    .content-section {
+        padding: 64px 0;
+    }
+
+        .content-section h2 {
+            padding-bottom: 16px;
+        }
+
+    .service-container {
+        padding: 0;
+        gap: 0;
+        box-shadow: 0px 3px 15px rgba(72, 72, 72, 0.2);
+    }
+
+        .service {
+            width: 90%;
+            padding: 32px;
+            gap: 16px;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+    /* Newsletter */
+    .newsletter-container {
+        gap: 16px;
+        box-shadow: 0px 3px 15px rgba(72, 72, 72, 0.2);
+    }
+
+        .newsletter-text {
+            width: 80%;
+        }
+
+        .newsletter-cta {
+            font-size: 1.4rem;
+            padding: 16px 32px;
+            min-width: fit-content;
+        }
+
+    /* Footer */
+    footer {
+        gap: 32px;
+        padding: 16px;
+    }
+}
