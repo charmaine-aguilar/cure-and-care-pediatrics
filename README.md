@@ -4,7 +4,7 @@ A landing page for a Jersey City-based pediatric clinic called Cure &amp; Care P
 View the website here: https://cureandcarepediatrics.netlify.app/
 <br>
 <div align='center'>
-  <img src="https://i.imgur.com/JEPcEpJ.png" height='600px' alt="Cure and Care mobile view">
+  <img src="/images/Cure-and-Care-Pediatrics-showcase.gif" height='400px' alt="Cure and Care mobile view">
 </div>
 
 ## How it's Made
